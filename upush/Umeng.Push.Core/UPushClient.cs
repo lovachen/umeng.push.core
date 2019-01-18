@@ -72,10 +72,6 @@ namespace Umeng.Push.Core
             url = url + "?sign=" + sign;
 
             var response = httpClient.PostAsync(url, new StringContent(postBody)).Result;
-
-            string src = response.Content.ReadAsStringAsync().Result;
-            System.Diagnostics.Debug.WriteLine(src);
-
             if (response.IsSuccessStatusCode)
                 return true;
             return false;
